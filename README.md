@@ -1,6 +1,6 @@
 # ATOM - Lead Assistant
 
-Este proyecto es parte de la prueba técnica de Carlos Moisés Méndez para un ejercicio para Atom. 
+Este proyecto es parte de la prueba técnica de Carlos Moisés Méndez para un ejercicio para Atom en la posición como Ingeniero de AI. 
 
 Es un asistente virtual que conversa con posibles clientes para ayudar a manejar sus interacciones iniciales, dar información básica y agendar citas. Por ahora, como no tenemos acceso a un CRM real, simplemente guardamos las conversaciones en un archivo Excel. Si en el futuro se quisiera conectar a un CRM, solo habría que modificar la configuración y apuntar a la API correcta.
 
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ```
 
 3. Configura tu clave de OpenAI:
-   - Crea un archivo `.env` en la carpeta principal
+   - Crea un archivo `.env` en la carpeta principal como referencia de
    - Escribe esto: `OPENAI_API_KEY=tu-clave-api`
 
 ## Cómo funciona
@@ -57,15 +57,15 @@ streamlit run app.py
 ```
 
 2. Platica con el asistente:
-   - Si tienes audio: Usa el botón para grabar tu voz
+   - Si tienes audio: Usa el botón para grabar tu voz (puedes modificar cuántos segundos máximo puedes hablar por interacción en el archivo configuración.py, default son 12)
    - Si no: Escribe en el cuadro de texto
 
-3. Puedes:
+3. Puedes para este ejercicio:
    - Preguntar sobre servicios de nutrición
    - Pedir información de planes
    - Agendar citas con nutriólogos
 
-## Problemas comunes
+## Problemas comunes 
 
 ### "No module named 'sounddevice'"
 No te preocupes, funcionará solo con texto. Si quieres usar audio:
@@ -78,38 +78,14 @@ Revisa que tu clave esté bien escrita en el archivo `.env` o en `configuracion.
 
 ## Cómo está organizado
 
-- `app.py`: La aplicación principal con la interfaz
-- `modulos/`: Las partes que hacen todo el trabajo
+- `app.py`: La aplicación principal con la interfaz para cargarlo
+- `modulos/`: Las partes que hacen todo el trabajo del back
   - `audio_manejador.py`: Maneja la grabación y reproducción de audio
-  - `stt.py`: Convierte voz a texto
-  - `tts.py`: Convierte texto a voz
-  - `agente.py`: El cerebro del asistente
-  - `calendario.py`: Para agendar citas
-  - `db_conexion.py`: Guarda las conversaciones
-- `prompts/`: Instrucciones para el asistente
-- `configuracion.py`: Ajustes del sistema
-- `requirements.txt`: Lo que necesita instalar
-
-## Instrucciones para subir a GitHub
-
-1. Crea un nuevo repositorio en GitHub (sin inicializar con README)
-2. Inicializa git en la carpeta del proyecto (si no lo está ya):
-```bash
-git init
-```
-3. Añade todos los archivos:
-```bash
-git add .
-```
-4. Haz tu primer commit:
-```bash
-git commit -m "Versión inicial del Asistente ATOM"
-```
-5. Conecta con tu repositorio:
-```bash
-git remote add origin https://github.com/tu-usuario/tu-repositorio.git
-```
-6. Sube el código:
-```bash
-git push -u origin main
-```
+  - `stt.py`: Convierte voz a texto 
+  - `tts.py`: Convierte texto a voz 
+  - `agente.py`: El cerebro del asistente para su interaccion
+  - `calendario.py`: Para agendar citas si se deseara
+  - `db_conexion.py`: Guarda las conversaciones en archivo db
+- `prompts/`: Instrucciones para el asistente detallando lo esperado de él
+- `configuracion.py`: Ajustes del sistema para escalar
+- `requirements.txt`: Lo que necesita instalar para que funcione
