@@ -1,0 +1,15 @@
+python-dotenv
+openai
+langchain
+langchain-openai
+langchain-community
+streamlit
+sounddevice
+soundfile
+numpy
+gtts
+openpyxl
+requests
+pytest
+aiofiles
+pandas
