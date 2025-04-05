@@ -51,9 +51,6 @@ CRM_API_ENDPOINT = os.getenv("CRM_API_ENDPOINT", None)
 # clave API para autenticarse con el CRM
 CRM_API_KEY = os.getenv("CRM_API_KEY", None)
 
-# ----------------------------------------------------
-# Validación
-# ----------------------------------------------------
 if not OPENAI_API_KEY:
     print("AVISO: No se encontró OPENAI_API_KEY en las variables de entorno.")
     print("La aplicación funcionará con funciones limitadas.")
