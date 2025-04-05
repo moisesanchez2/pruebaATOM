@@ -44,7 +44,6 @@ class LeadNuturingAgent:
             # Configuración de Langchain para la memoria de conversación
             self.memory = ConversationBufferMemory(return_messages=True, memory_key="history")
 
-            # Usamos LLMChain en vez de ConversationChain que está obsoleto
             self.conversation = LLMChain(
                 llm=self.llm,
                 prompt=prompt,
